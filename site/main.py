@@ -1,6 +1,7 @@
 import requests
 import json
 from urllib2 import urlopen
+import time
 
 url = "http://127.0.0.1:5000"
 headers = {'Content-Type': 'application/json'}
@@ -20,5 +21,8 @@ def post_public_ip():
     except Exception, e:
         print str(e)
 
+
 if __name__ == "__main__":
-    post_public_ip()
+    while (1):
+        post_public_ip()
+        time.sleep(600)
